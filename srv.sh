@@ -4,7 +4,7 @@
 #   Amaury Libert <amaury-libert@hotmail.com> de Blabla Linux <https://blablalinux.be>
 #
 # Description:
-#   Script d'installations logiciels pour Linux Mint 20 (Cinnamon/Mate/xfce) afin d'obtenir la suite logiciels SRV "Stream Record Virtualisation".
+#   Script d'installations logiciels pour Linux Mint 20+ (Cinnamon/Mate/xfce) afin d'obtenir la suite logiciels SRV "Stream Record Virtualisation".
 #
 # Préambule Légal:
 # 	Ce script est un logiciel libre.
