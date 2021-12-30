@@ -64,10 +64,10 @@ echo "Installation de VMware-Player-Full-16.2.1-18811642.x86_64.bundle..."
 #
 #
 # Logiciels à partir des dépôts (installations)
-echo "Installations de logiciels (et thème) à partir des dépôts : papirus-icon-theme, arc-theme, htop, nmon, neofetch, zram-tools, audacity, kdenlive, clipit, simplescreenrecorder, qemu, qemu-kvm, libvirt0, virt-manager, libguestfs-tools, ovmf, ssh-askpass, bridge-utils, gnome-boxes, ssh-askpass-gnome, openssh-server..."
+echo "Installations de logiciels (et thème) à partir des dépôts : papirus-icon-theme, arc-theme, htop, nmon, neofetch, zram-tools, audacity, kdenlive, clipit, simplescreenrecorder, qemu, qemu-kvm, libvirt0, virt-manager, libguestfs-tools, ovmf, ssh-askpass, ssh-askpass-gnome, bridge-utils, gnome-boxes, openssh-server..."
 apt install -y papirus-icon-theme arc-theme htop nmon neofetch zram-tools audacity kdenlive clipit simplescreenrecorder
 apt install -y -o 'apt::install-recommends=true' \
-  qemu qemu-kvm libvirt0 virt-manager libguestfs-tools ovmf ssh-askpass bridge-utils gnome-boxes ssh-askpass-gnome openssh-server
+  qemu qemu-kvm libvirt0 virt-manager libguestfs-tools ovmf ssh-askpass ssh-askpass-gnome bridge-utils gnome-boxes openssh-server
 #  
 echo "KVM ajouts groupes..."
 usermod -G kvm -a $SUDO_USER
