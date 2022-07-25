@@ -15,6 +15,7 @@
 #
 # 	Licence publique générale GNU : <https://www.gnu.org/licenses/gpl-3.0.txt>
 #
+#
 # Effacement ecran
 echo "Effacement écran..."
 clear
@@ -71,7 +72,8 @@ echo "Installations de logiciels (et thème) à partir des dépôts : papirus-ic
 apt install -y papirus-icon-theme arc-theme htop nmon neofetch zram-tools audacity kdenlive diodon simplescreenrecorder
 apt install -y -o 'apt::install-recommends=true' \
   qemu qemu-kvm libvirt0 virt-manager python3-guestfs libguestfs-tools ovmf ssh-askpass ssh-askpass-gnome bridge-utils gnome-boxes openssh-server
-#  
+#
+#
 echo "VirtualBox KVM ajouts groupes..."
 usermod -G vboxusers -a $SUDO_USER
 usermod -G disk -a $SUDO_USER
@@ -79,6 +81,7 @@ usermod -G kvm -a $SUDO_USER
 usermod -G libvirt -a $SUDO_USER
 usermod -G libvirt-qemu -a $SUDO_USER
 usermod -G libvirt-dnsmasq -a $SUDO_USER
+#
 #
 echo "Suppressions téléchargements..."
 rm *.vbox-extpack *.bundle
