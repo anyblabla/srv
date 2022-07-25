@@ -1,19 +1,20 @@
 # srv
-Software installation script for Linux Mint 20+ (Cinnamon / Mate / xfce) in order to obtain the SRV "Stream Record Virtualization" software suite.
+Software installation script for Linux Mint 21 (Cinnamon/Mate/xfce) and Ubuntu 22.04 in order to obtain the "Stream Record Virtualization" SRV software suite.
 
-Script d'installations logiciels pour Linux Mint 20+ (Cinnamon/Mate/xfce) afin d'obtenir la suite logiciels SRV "Stream Record Virtualisation".
+Script d'installation logiciels pour Linux Mint 21 (Cinnamon/Mate/xfce) et Ubuntu 22.04 afin d'obtenir la suite logiciels SRV "Stream Record Virtualisation".
 
 # Description
 This script allows the automatic installation of a set of virtualization software
 * Machines
 * KVM / Virtmanager
 * Quickemu
+* Quickgui
 * VirtualBox
 * VMware Player
 
 This script allows the automatic installation of a set of video recording and video broadcasting software
 * Simple Screen Recorder (SSR)
-* Open Broadcaster Software (OBS)
+* OBS Studio - Fully Loaded! (OBS)
 
 This script allows the automatic installation of a set of audio editing and video editing software
 * Audacity
@@ -35,12 +36,13 @@ Ce script permet l'installation automatique d'un ensemble de logiciels de virtua
 * Machines
 * KVM/Virtmanager
 * Quickemu
+* Quickgui
 * VirtualBox
 * VMware Player
 
 Ce script permet l'installation automatique d'un ensemble de logiciels d'enregistrements vidéo et de diffusions vidéo
 * Simple Screen Recorder (SSR)
-* Open Broadcaster Software (OBS)
+* OBS Studio - Fully Loaded! (OBS)
 
 Ce script permet l'installation automatique d'un ensemble de logiciels de retouches audios et de montages vidéo
 * Audacity
