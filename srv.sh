@@ -30,10 +30,10 @@ echo "Clone du projet GitHub OBS Studio - Fully Loaded..."
 git clone https://github.com/wimpysworld/obs-fully-loaded.git
 #
 echo "Ajouts du dépôt supplémentaire : flexiondotorg pour quickemu..."
-apt-add-repository ppa:flexiondotorg/quickemu
+apt-add-repository -y ppa:flexiondotorg/quickemu
 #
 echo "Ajouts du dépôt supplémentaire : yannick-mauray pour quickgui..."
-add-apt-repository ppa:yannick-mauray/quickgui
+add-apt-repository -y ppa:yannick-mauray/quickgui
 #
 echo "VirtualBox - Installer les paquets requis..."
 apt install wget apt-transport-https gnupg2 ubuntu-keyring -y
@@ -81,8 +81,6 @@ usermod -G libvirt-qemu -a $SUDO_USER
 usermod -G libvirt-dnsmasq -a $SUDO_USER
 #
 echo "Suppressions téléchargements..."
-rm obs-fully-loaded-main.zip
-rm -r obs-fully-loaded-main
 rm *.vbox-extpack *.bundle
 #
 echo "Nettoyage..."
