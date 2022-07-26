@@ -46,7 +46,7 @@ echo "VirtualBox - Importer le dépôt VirtualBox..."
 echo deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox.gpg] http://download.virtualbox.org/virtualbox/debian jammy contrib | tee /etc/apt/sources.list.d/virtualbox.list
 #
 echo "Téléchargement de VMware-Player-Full-16.2.4-20089737.x86_64.bundle + rendre éxécutable..."
-wget https://www.dropbox.com/s/8tlc8k4k2bwcz1s/VMware-Player-Full-16.2.3-19376536.x86_64.bundle
+wget https://www.dropbox.com/s/m8ln9i8t1ccllew/VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 #
 echo "Rafraîchissement dépôts..."
