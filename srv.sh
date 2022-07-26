@@ -27,8 +27,8 @@ apt update && apt upgrade -y
 #
 #
 # Logiciels hors dépôts (installations)
-echo "Clone du projet GitHub OBS Studio - Fully Loaded..."
-git clone https://github.com/wimpysworld/obs-fully-loaded.git
+echo "Ajouts du dépôt supplémentaire : obsproject pour obs-studio..."
+add-apt-repository -y ppa:obsproject/obs-studio
 #
 echo "Ajouts du dépôt supplémentaire : flexiondotorg pour quickemu..."
 apt-add-repository -y ppa:flexiondotorg/quickemu
@@ -45,17 +45,15 @@ wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmo
 echo "VirtualBox - Importer le dépôt VirtualBox..."
 echo deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox.gpg] http://download.virtualbox.org/virtualbox/debian jammy contrib | tee /etc/apt/sources.list.d/virtualbox.list
 #
-echo "Téléchargement de VMware-Player-Full-16.2.3-19376536.x86_64.bundle + rendre éxécutable..."
+echo "Téléchargement de VMware-Player-Full-16.2.4-20089737.x86_64.bundle + rendre éxécutable..."
 wget https://www.dropbox.com/s/8tlc8k4k2bwcz1s/VMware-Player-Full-16.2.3-19376536.x86_64.bundle
-chmod +x VMware-Player-Full-16.2.3-19376536.x86_64.bundle
+chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 #
 echo "Rafraîchissement dépôts..."
 apt update
 #
-echo "Installations de obs-studio, ffmpeg, quickemu, quickgui, virtualbox..."
-cd obs-fully-loaded
-./obs-install.sh
-apt install -y ffmpeg quickemu quickgui virtualbox-6.1
+echo "Installations de ffmpeg, obs-studio, quickemu, quickgui, virtualbox..."
+apt install -y ffmpeg obs-studio quickemu quickgui virtualbox-6.1
 #
 echo "Téléchargement du pack d'extension USB..."
 version=$(VBoxManage --version|cut -dr -f1|cut -d'_' -f1) && wget -c http://download.virtualbox.org/virtualbox/$version/Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack
@@ -63,8 +61,8 @@ version=$(VBoxManage --version|cut -dr -f1|cut -d'_' -f1) && wget -c http://down
 echo "Installation du pack d'extension USB..."
 echo "y" | VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack
 #
-echo "Installation de VMware-Player-Full-16.2.1-18811642.x86_64.bundle..."
-./VMware-Player-Full-16.2.3-19376536.x86_64.bundle
+echo "Installation de VMware-Player-Full-16.2.4-20089737.x86_64.bundle..."
+./VMware-Player-Full-16.2.4-20089737.x86_64.bundle
 #
 #
 # Logiciels à partir des dépôts (installations)
@@ -87,4 +85,5 @@ echo "Suppressions téléchargements..."
 rm *.vbox-extpack *.bundle
 #
 echo "Nettoyage..."
+apt remove kdeconnect
 apt autoremove
