@@ -14,7 +14,7 @@ This script allows the automatic installation of a set of virtualization softwar
 
 This script allows the automatic installation of a set of video recording and video broadcasting software
 * Simple Screen Recorder (SSR)
-* OBS Studio - Fully Loaded! (OBS)
+* Open Broadcaster Software (OBS)
 
 This script allows the automatic installation of a set of audio editing and video editing software
 * Audacity
@@ -42,7 +42,7 @@ Ce script permet l'installation automatique d'un ensemble de logiciels de virtua
 
 Ce script permet l'installation automatique d'un ensemble de logiciels d'enregistrements vidéo et de diffusions vidéo
 * Simple Screen Recorder (SSR)
-* OBS Studio - Fully Loaded! (OBS)
+* Open Broadcaster Software (OBS)
 
 Ce script permet l'installation automatique d'un ensemble de logiciels de retouches audios et de montages vidéo
 * Audacity
