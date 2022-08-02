@@ -5,6 +5,7 @@
 #
 # Description:
 #   Script d'installations logiciels pour Linux Mint 21 (Cinnamon/Mate/xfce) et Ubuntu 22.04 afin d'obtenir la suite logiciels SRV "Stream Record Virtualisation".
+#   Software installation script for Linux Mint 21 (Cinnamon/Mate/xfce) and Ubuntu 22.04 in order to obtain the "Stream Record Virtualization" SRV software suite.
 #
 # Préambule Légal:
 # 	Ce script est un logiciel libre.
