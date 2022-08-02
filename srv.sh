@@ -37,6 +37,9 @@ apt-add-repository -y ppa:flexiondotorg/quickemu
 echo "Ajouts du dépôt supplémentaire : yannick-mauray pour quickgui..."
 add-apt-repository -y ppa:yannick-mauray/quickgui
 #
+echo "Obsolescence de trousseau de clés (obs-studio, quickemu, quickgui) - Copie à l'endroit maintenant recommandé par APT..."
+cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d/
+#
 echo "VirtualBox - Installer les paquets requis..."
 apt install wget apt-transport-https gnupg2 ubuntu-keyring -y
 #
