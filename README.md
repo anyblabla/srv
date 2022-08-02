@@ -21,6 +21,7 @@ This script allows the automatic installation of a set of audio editing and vide
 * Kdenlive
 
 This script allows the automatic installation of a set of utilities
+* Diodon
 * Htop
 * Nmon
 * Neofetch
@@ -49,6 +50,7 @@ Ce script permet l'installation automatique d'un ensemble de logiciels de retouc
 * Kdenlive
 
 Ce script permet l'installation automatique d'un ensemble d'utilitaires
+* Diodon
 * Htop
 * Nmon
 * Neofetch
