@@ -89,5 +89,5 @@ echo "Suppressions téléchargements..."
 rm *.vbox-extpack *.bundle
 #
 echo "Nettoyage..."
-apt remove kdeconnect
-apt autoremove
+apt remove kdeconnect -y
+apt autoremove -y
