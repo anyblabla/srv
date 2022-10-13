@@ -57,7 +57,7 @@ echo "Rafraîchissement dépôts..."
 apt update
 #
 echo "Installations de ffmpeg, obs-studio, quickemu, quickgui, virtualbox..."
-apt install -y ffmpeg obs-studio quickemu quickgui virtualbox-6.1
+apt install -y ffmpeg obs-studio quickemu quickgui virtualbox-7.0
 #
 echo "Téléchargement du pack d'extension USB..."
 version=$(VBoxManage --version|cut -dr -f1|cut -d'_' -f1) && wget -c http://download.virtualbox.org/virtualbox/$version/Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack
