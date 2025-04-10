@@ -61,14 +61,14 @@ Ce script permet l'installation automatique d'un thème de fenêtres et d'un th�
 * Papirus Icon Theme
 
 # Installation "srv.sh"
-chmod +x srv.sh
+- chmod +x srv.sh
 
-sudo ./srv.sh
+- sudo ./srv.sh
 
 # Installation "srv2.sh"
-chmod +x srv2.sh
+- chmod +x srv2.sh
 
-sudo ./srv2.sh
+- sudo ./srv2.sh
 
 # REMARQUE / REMARK
 La seule différence entre srv.sh et srv2.sh est l'outil VMware
@@ -76,4 +76,4 @@ srv.sh installera "VMware-Player-Full-16.2.4-20089737.x86_64.bundle"
 srv2.sh installera "VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle"
 
 # Demonstration / Démonstration
-https://youtu.be/UW3vA8QjONU
+- https://youtu.be/UW3vA8QjONU
