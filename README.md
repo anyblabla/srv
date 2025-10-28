@@ -1,79 +1,69 @@
-# srv
-Software installation script for Linux Mint 21 (Cinnamon/Mate/xfce) and Ubuntu 22.04 in order to obtain the "Stream Record Virtualization" SRV software suite.
+# 🚀 `srv` Suite Logicielle
 
-Script d'installation logiciels pour Linux Mint 21 (Cinnamon/Mate/xfce) et Ubuntu 22.04 afin d'obtenir la suite logiciels SRV "Stream Record Virtualisation".
+## Installation Automatisée de la Suite "Stream Record Virtualization" (SRV)
 
-# Description
-This script allows the automatic installation of a set of virtualization software
-* Machines
-* KVM / Virtmanager
-* Quickemu
-* Quickgui
-* VirtualBox
-* VMware Player / VMware Workstation (srv2.sh)
+-----
 
-This script allows the automatic installation of a set of video recording and video broadcasting software
-* Simple Screen Recorder (SSR)
-* Open Broadcaster Software (OBS)
+### 🇫🇷 Description du Projet
 
-This script allows the automatic installation of a set of audio editing and video editing software
-* Audacity
-* Kdenlive
+Ce projet est une collection de scripts Bash conçus pour automatiser l'installation complète d'une suite logicielle dédiée à la **Virtualisation, l'Enregistrement (Record) et la Diffusion (Stream)** sur les distributions basées sur Debian/Ubuntu.
 
-This script allows the automatic installation of a set of utilities
-* Diodon
-* Htop
-* Nmon
-* Neofetch
-* Zram
+Surnommée la suite **SRV**, elle installe tous les outils nécessaires à la création de contenu vidéo, de la capture d'écran au montage, en passant par la gestion de machines virtuelles.
 
-This script allows the automatic installation of a window theme and an icon theme
-* Arc Theme
-* Papirus Icon Theme
+**Compatibilité :**
 
-----------------------------------------------------------------------
+  * **Linux Mint 21.x** (Cinnamon, Mate, Xfce)
+  * **Ubuntu 22.04.x**
 
-Ce script permet l'installation automatique d'un ensemble de logiciels de virtualisation
-* Machines
-* KVM/Virtmanager
-* Quickemu
-* Quickgui
-* VirtualBox
-* VMware Player / VMware Workstation (srv2.sh)
+### 🇬🇧 Project Description
 
-Ce script permet l'installation automatique d'un ensemble de logiciels d'enregistrements vidéo et de diffusions vidéo
-* Simple Screen Recorder (SSR)
-* Open Broadcaster Software (OBS)
+This project is a collection of Bash scripts designed to automate the complete installation of a software suite dedicated to **Virtualization, Recording, and Streaming** on Debian/Ubuntu-based distributions.
 
-Ce script permet l'installation automatique d'un ensemble de logiciels de retouches audios et de montages vidéo
-* Audacity
-* Kdenlive
+Dubbed the **SRV** suite, it installs all the necessary tools for video content creation, from screen capture to editing, including virtual machine management.
 
-Ce script permet l'installation automatique d'un ensemble d'utilitaires
-* Diodon
-* Htop
-* Nmon
-* Neofetch
-* Zram
+-----
 
-Ce script permet l'installation automatique d'un thème de fenêtres et d'un thème d'icônes
-* Arc Theme
-* Papirus Icon Theme
+### 📦 Logiciels Inclus
 
-# Installation "srv.sh"
-- chmod +x srv.sh
+Le script installe automatiquement un large éventail de logiciels de pointe pour la création de contenu :
 
-- sudo ./srv.sh
+| Catégorie | Logiciels Installés | Description |
+| :--- | :--- | :--- |
+| **Virtualisation** | **Machines, KVM/Virtmanager, Quickemu, Quickgui, VirtualBox, VMware** | Suite complète pour créer, gérer et utiliser des machines virtuelles. |
+| **Enregistrement/Streaming** | **Simple Screen Recorder (SSR), Open Broadcaster Software (OBS)** | Outils de capture d'écran légers et professionnels, et solution complète de diffusion en direct. |
+| **Audio/Vidéo Édition** | **Audacity, Kdenlive** | Logiciel de retouche audio et éditeur de montage vidéo non linéaire puissant. |
+| **Utilitaires Système** | **Diodon, Htop, Nmon, Neofetch, Zram** | Gestionnaire de presse-papiers, outils de surveillance des ressources (`htop`, `nmon`), information système (`neofetch`) et optimisation de la RAM (`zram`). |
+| **Esthétique** | **Arc Theme, Papirus Icon Theme** | Thèmes de fenêtres et d'icônes pour une interface utilisateur moderne et cohérente. |
 
-# Installation "srv2.sh"
-- chmod +x srv2.sh
+-----
 
-- sudo ./srv2.sh
+### 🛠️ Installation et Différences entre les Scripts
 
-# REMARQUE / REMARK
-La seule différence entre srv.sh et srv2.sh est l'outil VMware
-srv.sh installera "VMware-Player-Full-16.2.4-20089737.x86_64.bundle"
-srv2.sh installera "VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle"
+Deux scripts sont fournis, la seule différence étant l'outil VMware installé :
 
-# Demonstration / Démonstration
-- https://youtu.be/UW3vA8QjONU
+| Script | Outil VMware Installé | Version Installée | Instructions |
+| :--- | :--- | :--- | :--- |
+| **`srv.sh`** | **VMware Player** | `VMware-Player-Full-16.2.4-20089737.x86_64.bundle` | 1. `chmod +x srv.sh` <br> 2. `sudo ./srv.sh` |
+| **`srv2.sh`** | **VMware Workstation** | `VMware-Workstation-Full-16.2.4-20089737.x86_64.bundle` | 1. `chmod +x srv2.sh` <br> 2. `sudo ./srv2.sh` |
+
+**REMARQUE / REMARK :**
+
+  * **`srv.sh`** installe **VMware Player**, qui est gratuit pour un usage personnel.
+  * **`srv2.sh`** installe **VMware Workstation**, qui nécessite une licence (ou peut être utilisé en période d'essai).
+
+-----
+
+### 📺 Démonstration
+
+Regardez la vidéo ci-dessous pour voir l'installation automatique et la vérification de tous les logiciels composant la suite SRV :
+
+| Vidéo | Chaîne | Lien |
+| :--- | :--- | :--- |
+| **SRV script (Stream Record Virtualisation)** | Blabla Linux | [Regarder la Démonstration](http://www.youtube.com/watch?v=UW3vA8QjONU) |
+
+-----
+
+### 📝 Licence
+
+Ce projet est sous licence **[À compléter - Ex: MIT, GPL, etc.]**.
+http://googleusercontent.com/youtube_content/8
