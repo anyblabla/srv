@@ -1,10 +1,10 @@
-# 🚀 `srv` Suite Logicielle
+# 🚀 `srv` Suite logicielle
 
-## Installation Automatisée de la Suite "Stream Record Virtualization" (SRV)
+## Installation automatisée de la suite "Stream Record Virtualization" (SRV)
 
 -----
 
-### 🇫🇷 Description du Projet
+### 🇫🇷 **Description du projet**
 
 Ce projet est une collection de scripts Bash conçus pour automatiser l'installation complète d'une suite logicielle dédiée à la **Virtualisation, l'Enregistrement (Record) et la Diffusion (Stream)** sur les distributions basées sur Debian/Ubuntu.
 
@@ -15,7 +15,7 @@ Surnommée la suite **SRV**, elle installe tous les outils nécessaires à la cr
   * **Linux Mint 21.x** (Cinnamon, Mate, Xfce)
   * **Ubuntu 22.04.x**
 
-### 🇬🇧 Project Description
+### 🇬🇧 **Project Description**
 
 This project is a collection of Bash scripts designed to automate the complete installation of a software suite dedicated to **Virtualization, Recording, and Streaming** on Debian/Ubuntu-based distributions.
 
@@ -23,7 +23,7 @@ Dubbed the **SRV** suite, it installs all the necessary tools for video content 
 
 -----
 
-### 📦 Logiciels Inclus
+### 📦 **Logiciels inclus**
 
 Le script installe automatiquement un large éventail de logiciels de pointe pour la création de contenu :
 
@@ -37,7 +37,7 @@ Le script installe automatiquement un large éventail de logiciels de pointe pou
 
 -----
 
-### 🛠️ Installation et Différences entre les Scripts
+### 🛠️ **Installation et différences entre les scripts**
 
 Deux scripts sont fournis, la seule différence étant l'outil VMware installé :
 
@@ -53,7 +53,7 @@ Deux scripts sont fournis, la seule différence étant l'outil VMware installé 
 
 -----
 
-### 📺 Démonstration
+### 📺 **Démonstration**
 
 Regardez la vidéo ci-dessous pour voir l'installation automatique et la vérification de tous les logiciels composant la suite SRV :
 
@@ -63,7 +63,6 @@ Regardez la vidéo ci-dessous pour voir l'installation automatique et la vérifi
 
 -----
 
-### 📝 Licence
+### 📝 **Licence**
 
 Ce projet est sous licence **[À compléter - Ex: MIT, GPL, etc.]**.
-http://googleusercontent.com/youtube_content/8
