@@ -65,4 +65,4 @@ Regardez la vidéo ci-dessous pour voir l'installation automatique et la vérifi
 
 ### 📝 **Licence**
 
-Ce projet est sous licence **[À compléter - Ex: MIT, GPL, etc.]**.
+Ce projet est sous licence GNU GPL (v2.0).
