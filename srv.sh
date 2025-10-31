@@ -1,93 +1,69 @@
 #!/bin/bash
-#
-# Autheur:
-#   Amaury Libert <amaury-libert@hotmail.com> de Blabla Linux <https://blablalinux.be>
-#
-# Description:
-#   Script d'installations logiciels pour Linux Mint 21 (Cinnamon/Mate/xfce) et Ubuntu 22.04 afin d'obtenir la suite logiciels SRV "Stream Record Virtualisation".
-#   Software installation script for Linux Mint 21 (Cinnamon/Mate/xfce) and Ubuntu 22.04 in order to obtain the "Stream Record Virtualization" SRV software suite.
-#
-# Préambule Légal:
-# 	Ce script est un logiciel libre.
-# 	Vous pouvez le redistribuer et / ou le modifier selon les termes de la licence publique générale GNU telle que publiée par la Free Software Foundation; version 3.
-#
-# 	Ce script est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE GARANTIE; sans même la garantie implicite de QUALITÉ MARCHANDE ou d'ADÉQUATION À UN USAGE PARTICULIER.
-# 	Voir la licence publique générale GNU pour plus de détails.
-#
-# 	Licence publique générale GNU : <https://www.gnu.org/licenses/gpl-2.0.txt>
-#
-#
-# Effacement ecran
-echo "Effacement écran..."
-clear
-#
-#
-# Rafraîchissement dépôts
-echo "Rafraîchissement dépôts + mises à jour..."
-apt update && apt upgrade -y
-#
-#
-# Logiciels hors dépôts (installations)
-echo "Ajouts du dépôt supplémentaire : obsproject pour obs-studio..."
-add-apt-repository -y ppa:obsproject/obs-studio
-#
-echo "Ajouts du dépôt supplémentaire : flexiondotorg pour quickemu..."
-apt-add-repository -y ppa:flexiondotorg/quickemu
-#
-echo "Ajouts du dépôt supplémentaire : yannick-mauray pour quickgui..."
-add-apt-repository -y ppa:yannick-mauray/quickgui
-#
-echo "Obsolescence de trousseau de clés (obs-studio, quickemu, quickgui) - Copie à l'endroit maintenant recommandé par APT..."
-cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d/
-#
-echo "VirtualBox - Installer les paquets requis..."
-apt install wget apt-transport-https gnupg2 ubuntu-keyring -y
-#
-echo "VirtualBox - Importer la clé GPG..." 
-wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor | tee /usr/share/keyrings/virtualbox.gpg
-#
-echo "VirtualBox - Importer le dépôt VirtualBox..."
-echo deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox.gpg] http://download.virtualbox.org/virtualbox/debian jammy contrib | tee /etc/apt/sources.list.d/virtualbox.list
-#
-echo "Téléchargement de VMware-Player-Full-16.2.4-20089737.x86_64.bundle + rendre éxécutable..."
-wget https://www.dropbox.com/s/m8ln9i8t1ccllew/VMware-Player-Full-16.2.4-20089737.x86_64.bundle
-chmod +x VMware-Player-Full-16.2.4-20089737.x86_64.bundle
-#
-echo "Rafraîchissement dépôts..."
+
+# ==============================================================================
+# TITRE: Installation de la Suite Logicielle "SRV" (Stream Record Virtualisation)
+# AUTEUR: Amaury Libert (Base) | Amélioré par l'IA
+# LICENCE: GPLv3
+# DESCRIPTION:
+#   Installation automatisée d'OBS, Quickemu, VirtualBox, KVM/Virt-Manager et
+#   VMware Player, ainsi que des outils associés.
+# ==============================================================================
+
+# --- Configuration et Préparation ---
+
+# Mode strict: Quitte en cas d'erreur (-e), variable non définie (-u), ou échec
+# dans un pipe (-o pipefail).
+set -euo pipefail
+
+# Couleurs pour une sortie utilisateur claire
+VERT='\033[0;32m'
+ROUGE='\033[0;31m'
+JAUNE='\033[0;33m'
+CYAN='\033[0;36m'
+FIN='\033[0m'
+
+# Fichiers et variables
+VERSION_VMWARE="16.2.4-20089737"
+FICHIER_VMWARE="VMware-Player-Full-${VERSION_VMWARE}.x86_64.bundle"
+URL_VMWARE="https://www.dropbox.com/s/m8ln9i8t1ccllew/${FICHIER_VMWARE}?dl=1" # Ajout de ?dl=1 pour le téléchargement direct
+CLE_VBOX_KEYRING="/usr/share/keyrings/oracle-virtualbox.gpg"
+FICHIER_VBOX_SOURCES="/etc/apt/sources.list.d/virtualbox.list"
+DISTRIBUTION_CODENAME="jammy" # Pour Ubuntu 22.04 / Mint 21
+
+# Vérification des droits root
+if [ "$(id -u)" -ne 0 ]; then
+    echo -e "${ROUGE}ERREUR : Ce script doit être exécuté avec 'sudo' ou en tant que root.${FIN}"
+    exit 1
+fi
+
+# Déterminer l'utilisateur réel (pour les groupes)
+UTILISATEUR_REEL=${SUDO_USER:-$(whoami)}
+
+echo -e "${CYAN}*** Début de l'installation de la Suite SRV ***${FIN}"
+clear # Effacement de l'écran
+
+# --- Étape 1: Mises à jour et Prérequis ---
+
+echo -e "${JAUNE}1. Mise à jour des dépôts et installation des prérequis fondamentaux...${FIN}"
+
+# apt-transport-https est implicite, on ajoute curl et les outils de construction pour VMware et KVM
 apt update
-#
-echo "Installations de ffmpeg, obs-studio, quickemu, quickgui, virtualbox..."
-apt install -y ffmpeg obs-studio quickemu quickgui virtualbox-7.0
-#
-echo "Téléchargement du pack d'extension USB..."
-version=$(VBoxManage --version|cut -dr -f1|cut -d'_' -f1) && wget -c http://download.virtualbox.org/virtualbox/$version/Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack
-#
-echo "Installation du pack d'extension USB..."
-echo "y" | VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-$version.vbox-extpack
-#
-echo "Installation de VMware-Player-Full-16.2.4-20089737.x86_64.bundle..."
-./VMware-Player-Full-16.2.4-20089737.x86_64.bundle
-#
-#
-# Logiciels à partir des dépôts (installations)
-echo "Installations de logiciels (et thème) à partir des dépôts : papirus-icon-theme, arc-theme, htop, nmon, neofetch, zram-tools, audacity, kdenlive, diodon, simplescreenrecorder, qemu, qemu-kvm, libvirt0, virt-manager, python3-guestfs, libguestfs-tools, ovmf, ssh-askpass, ssh-askpass-gnome, bridge-utils, gnome-boxes, openssh-server..."
-apt install -y papirus-icon-theme arc-theme htop nmon neofetch zram-tools audacity kdenlive diodon simplescreenrecorder
-apt install -y -o 'apt::install-recommends=true' \
-  qemu qemu-kvm libvirt0 virt-manager python3-guestfs libguestfs-tools ovmf ssh-askpass ssh-askpass-gnome bridge-utils gnome-boxes openssh-server
-#
-#
-echo "VirtualBox KVM ajouts groupes..."
-usermod -G vboxusers -a $SUDO_USER
-usermod -G disk -a $SUDO_USER
-usermod -G kvm -a $SUDO_USER
-usermod -G libvirt -a $SUDO_USER
-usermod -G libvirt-qemu -a $SUDO_USER
-usermod -G libvirt-dnsmasq -a $SUDO_USER
-#
-#
-echo "Suppressions téléchargements..."
-rm *.vbox-extpack *.bundle
-#
-echo "Nettoyage..."
-apt remove kdeconnect -y
-apt autoremove -y
+apt upgrade -y
+apt install -y wget curl apt-transport-https gnupg build-essential dkms libglib2.0-0 libx11-6 zlib1g
+
+# --- Étape 2: Ajout des Dépôts Tiers (PPAs et Oracle) ---
+
+echo -e "${JAUNE}2. Ajout des dépôts supplémentaires (OBS, Quickemu, VirtualBox)...${FIN}"
+
+# PPAs (Utilisation de l'outil 'add-apt-repository' standard)
+add-apt-repository -y ppa:obsproject/obs-studio
+add-apt-repository -y ppa:flexiondotorg/quickemu
+add-apt-repository -y ppa:yannick-mauray/quickgui
+
+# NOTE: L'étape 'cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d/' est dangereuse et obsolète.
+# Les PPAs modernes importent automatiquement les clés dans un fichier dédié dans
+# /etc/apt/trusted.gpg.d/ ou /etc/apt/sources.list.d/. Nous la supprimons.
+
+# VirtualBox (Méthode sécurisée avec signed-by)
+echo "VirtualBox - Importation de la clé GPG..."
+wget -qO-
