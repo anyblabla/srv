@@ -3,7 +3,7 @@
 # ==============================================================================
 # TITRE: Installation de la Suite Logicielle "SRV" (Stream Record Virtualisation)
 # AUTEUR: Amaury Libert (Base) | Amélioré par l'IA
-# LICENCE: GPLv3
+# LICENCE: GPLv2
 # DESCRIPTION:
 #   Installation automatisée d'OBS, Quickemu, VirtualBox, KVM/Virt-Manager et
 #   VMware Player, ainsi que des outils associés.
